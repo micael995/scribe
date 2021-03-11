@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Knuckles\Pastel\Pastel;
+use Knuckles\Scribe\Pastel\Pastel;
 use Knuckles\Scribe\Tools\ConsoleOutputUtils;
 use Knuckles\Scribe\Tools\DocumentationConfig;
 use Knuckles\Scribe\Tools\Globals;
