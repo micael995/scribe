@@ -33,7 +33,7 @@
 @endforeach
 @endif
 <div id="execution-results-{{ $endpointId }}" hidden>
-    <blockquote>Received response<span id="execution-response-status-{{ $endpointId }}"></span>:</blockquote>
+    <blockquote>Resposta<span id="execution-response-status-{{ $endpointId }}"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-{{ $endpointId }}"></code></pre>
 </div>
 <div id="execution-error-{{ $endpointId }}" hidden>
@@ -44,9 +44,27 @@
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     @if($settings['interactive'])
-    <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-{{ $endpointId }}" onclick="tryItOut('{{ $endpointId }}');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-{{ $endpointId }}" onclick="cancelTryOut('{{ $endpointId }}');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-{{ $endpointId }}" hidden>Send Request 💥</button>
+    <button type="button" style="background-color: #196ba0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: thin;
+    color: white;
+    outline: none;
+    border: none;" id="btn-tryout-{{ $endpointId }}" onclick="tryItOut('{{ $endpointId }}');">Testar ⚡</button>
+    <button type="button" style="background-color: #c97a7e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: thin;
+    color: white;
+    outline: none;
+    border: none;" id="btn-canceltryout-{{ $endpointId }}" onclick="cancelTryOut('{{ $endpointId }}');" hidden>Cancelar</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: thin;
+    color: white;
+    outline: none;
+    border: none;" id="btn-executetryout-{{ $endpointId }}" hidden>Enviar 💥</button>
     @endif
 </h3>
 @foreach($route['methods'] as $method)
@@ -60,7 +78,7 @@
 </p>
 @endif
 @if(count($route['urlParameters']))
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<h4 class="fancy-heading-panel"><b>Parâmetros de URL</b></h4>
 @foreach($route['urlParameters'] as $attribute => $parameter)
 <p>
 @component('scribe::components.field-details', [
@@ -92,7 +110,7 @@
 @endforeach
 @endif
 @if(count($route['nestedBodyParameters']))
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<h4 class="fancy-heading-panel"><b>Corpo da request</b></h4>
 @component('scribe::partials.body-parameters', ['parameters' => $route['nestedBodyParameters'], 'endpointId' => $endpointId,])
 @endcomponent
 @endif
@@ -100,7 +118,7 @@
 
 @if(count($route['responseFields'] ?? []))
 ### Response
-<h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+<h4 class="fancy-heading-panel"><b>Response</b></h4>
 @foreach($route['responseFields'] as $name => $field)
 <p>
 @component('scribe::components.field-details', [

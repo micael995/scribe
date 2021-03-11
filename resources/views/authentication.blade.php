@@ -1,7 +1,7 @@
 # Authenticating requests
 
 @if(!$isAuthed)
-This API is not authenticated.
+Essa API não é autenticada.
 @else
 {!! $authDescription !!}
 

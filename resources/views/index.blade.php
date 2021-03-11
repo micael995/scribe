@@ -2,7 +2,7 @@
 {!! $frontmatter !!}
 ---
 
-# Introduction
+# Introdução
 
 {!! $description !!}
 
