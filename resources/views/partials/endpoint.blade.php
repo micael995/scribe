@@ -37,7 +37,7 @@
     <pre class="json"><code id="execution-response-content-{{ $endpointId }}"></code></pre>
 </div>
 <div id="execution-error-{{ $endpointId }}" hidden>
-    <blockquote>Request failed with error:</blockquote>
+    <blockquote>Requisição falhou com erro:</blockquote>
     <pre><code id="execution-error-message-{{ $endpointId }}"></code></pre>
 </div>
 <form id="form-{{ $endpointId }}" data-method="{{ $route['methods'][0] }}" data-path="{{ $route['uri'] }}" data-authed="{{ $route['metadata']['authenticated'] ? 1 : 0 }}" data-hasfiles="{{ count($route['fileParameters']) }}" data-headers='@json($route['headers'])' onsubmit="event.preventDefault(); executeTryOut('{{ $endpointId }}', this);">
