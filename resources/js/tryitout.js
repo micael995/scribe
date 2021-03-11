@@ -20,7 +20,7 @@ function cancelTryOut(endpointId) {
     document.querySelector(`#btn-tryout-${endpointId}`).hidden = false;
     const executeBtn = document.querySelector(`#btn-executetryout-${endpointId}`);
     executeBtn.hidden = true;
-    executeBtn.textContent = "Send Request 💥";
+    executeBtn.textContent = "Enviar request 💥";
     document.querySelector(`#btn-canceltryout-${endpointId}`).hidden = true;
     // hide inputs
     document.querySelectorAll(`input[data-endpoint=${endpointId}],label[data-endpoint=${endpointId}]`)
